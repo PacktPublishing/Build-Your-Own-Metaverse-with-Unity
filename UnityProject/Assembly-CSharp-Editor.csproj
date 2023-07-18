@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0F36F635-4B3E-45E7-B09C-4B7386121E63}</ProjectGuid>
+    <ProjectGuid>{3CC9D2C0-C461-07D9-EDF3-4FFB4DE5C299}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -58,20 +58,20 @@
   <ItemGroup>
     <Compile Include="Assets\Oculus\SampleFramework\Usage\OVROverlayCanvas\Editor\OVROverlayCanvasEditor.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Editor\OculusSampleFrameworkUtil.cs" />
+    <Compile Include="Assets\Editor\ERC20_Tests\ERC20_Test.cs" />
     <Compile Include="Assets\StarterAssets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Editor\BuildAssetPackages.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Editor\AndroidVideoEditorUtil.cs" />
     <Compile Include="Assets\StarterAssets\Editor\StarterAssetsDeployMenu.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Editor\BuildSamples.cs" />
+    <Compile Include="Assets\Editor\ServerSettings\ChainsafeServerSettings.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Gradle\Editor\Utils.cs" />
     <Compile Include="Assets\StarterAssets\Editor\ThirdPersonStarterAssetsDeployMenu.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Firebase\Editor\FirebaseEnabler.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\Editor\TeleportTransitionWarpInspector.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Core\Video\Editor\MediaPlayerImageEditor.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\Editor\ChatEditor.cs" />
-    <Compile Include="Assets\Editor\ServerSettings\ChainsafeServerSettings.cs" />
-    <Compile Include="Assets\Editor\ERC20_Tests\ERC20_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Firebase\Editor\FirebaseAuth_version-10.1.1_manifest.txt" />
@@ -367,11 +367,29 @@
     <Reference Include="Firebase.TaskExtension">
       <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
     </Reference>
+    <Reference Include="SDKConfiguration">
+      <HintPath>Assets\Plugins\Web3\Web3\SDKConfiguration.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="sdk_core_ethers">
+      <HintPath>Assets\Plugins\Web3\Web3\sdk_core_ethers.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="StarterAssetsPackageChecker">
       <HintPath>Assets\StarterAssets\Editor\PackageChecker\StarterAssetsPackageChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>Assets\Plugins\Web3\Web3\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Datadog.Logs">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.Datadog.Logs.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
@@ -381,6 +399,12 @@
     </Reference>
     <Reference Include="Google.VersionHandler">
       <HintPath>Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog">
+      <HintPath>Assets\Plugins\Analytics\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.App">
       <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
@@ -397,38 +421,14 @@
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
+    <Reference Include="GameData">
+      <HintPath>Assets\Plugins\Analytics\GameData.dll</HintPath>
+    </Reference>
     <Reference Include="Firebase.Platform">
       <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Auth">
       <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
-    </Reference>
-    <Reference Include="SDKConfiguration">
-      <HintPath>Assets\Plugins\Web3\Web3\SDKConfiguration.dll</HintPath>
-    </Reference>
-    <Reference Include="sdk_core_ethers">
-      <HintPath>Assets\Plugins\Web3\Web3\sdk_core_ethers.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.File">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.File.dll</HintPath>
-    </Reference>
-    <Reference Include="BouncyCastle.Crypto">
-      <HintPath>Assets\Plugins\Web3\Web3\BouncyCastle.Crypto.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.Datadog.Logs">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.Datadog.Logs.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.PeriodicBatching">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.PeriodicBatching.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog">
-      <HintPath>Assets\Plugins\Analytics\Serilog.dll</HintPath>
-    </Reference>
-    <Reference Include="GameData">
-      <HintPath>Assets\Plugins\Analytics\GameData.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -979,239 +979,239 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{2B8DD4CD-8F3B-ED85-A9FA-38FE8D07DA08}</Project>
+      <Project>{FDE690F1-626F-FFA0-5754-E83120972A79}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{EDF152BF-9AEE-710C-4A86-63C92D1C416E}</Project>
+      <Project>{5B580621-09B4-68CB-B5F4-5B9DD210A60F}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonChat.csproj">
-      <Project>{7A3572A2-C572-665E-B6F4-DC12E694F211}</Project>
+      <Project>{2F941D62-A46D-1B64-F983-80423576B77C}</Project>
       <Name>PhotonChat</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.VoiceSDK.Mic.WebGL.csproj">
-      <Project>{7DD3D004-E27A-5321-CF01-A4A6C021CB0E}</Project>
+      <Project>{E0A04AF8-C5CB-868F-30C7-EE05EA87D4F8}</Project>
       <Name>Meta.VoiceSDK.Mic.WebGL</Name>
     </ProjectReference>
     <ProjectReference Include="AssistantCoreSDKEditor.csproj">
-      <Project>{56E1B341-DEC9-91CC-D859-46CE6B61C45C}</Project>
+      <Project>{46585A52-034D-2659-9B58-A17DE9D24A5A}</Project>
       <Name>AssistantCoreSDKEditor</Name>
     </ProjectReference>
     <ProjectReference Include="MicAmplifierEditor.Editor.csproj">
-      <Project>{F110FBE6-476E-439C-8970-76842801DC04}</Project>
+      <Project>{B60397D3-F8F3-C3C8-E564-2A463D4E23C0}</Project>
       <Name>MicAmplifierEditor.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Voice.Demo.csproj">
-      <Project>{B902FD05-9311-B535-42D5-29D2709820C8}</Project>
+      <Project>{EBFA493E-EB01-17E2-F7CD-195FF9115541}</Project>
       <Name>Oculus.Voice.Demo</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.AudioManager.csproj">
-      <Project>{EDF8052A-BB1A-AB84-678B-5BD205DC9991}</Project>
+      <Project>{901AEFAA-AB60-426E-D966-A8E2E5B87561}</Project>
       <Name>Oculus.AudioManager</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.VoiceSDK.Mic.Common.csproj">
-      <Project>{C05FC58E-C754-6A59-7A06-3FD7994A52CB}</Project>
+      <Project>{B5B9F83F-3404-8423-2CB9-EB0F63D773F8}</Project>
       <Name>Meta.VoiceSDK.Mic.Common</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.csproj">
-      <Project>{9D1312C2-C23E-24E8-CE3F-ED258F43197D}</Project>
+      <Project>{742F3D75-7200-00C0-B54F-CDA08E01A50D}</Project>
       <Name>Oculus.Interaction</Name>
     </ProjectReference>
     <ProjectReference Include="AssistantCoreSDKRuntime.csproj">
-      <Project>{C82A71E1-D9B2-FDE9-D5E5-A50B6112BA96}</Project>
+      <Project>{2CDBC01C-6097-A4BB-150C-CC90868B471B}</Project>
       <Name>AssistantCoreSDKRuntime</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Conduit.csproj">
-      <Project>{2A72ECBA-A2E0-96E3-2541-E759615C497F}</Project>
+      <Project>{8DF9F8AD-2087-40C0-61D1-F684098B7460}</Project>
       <Name>Meta.WitAi.Conduit</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
-      <Project>{6D303B94-CDF3-904C-2803-6B1B68E5F591}</Project>
+      <Project>{BC33497D-DDD6-F76F-1575-0C9969AAE9BF}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.OVR.csproj">
-      <Project>{F2E70598-F07F-7CB7-1D83-3389A0283716}</Project>
+      <Project>{E149025D-B25B-27FE-6F60-7A46E9D2EB92}</Project>
       <Name>Oculus.Interaction.OVR</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
-      <Project>{85DD5B7E-4BAC-0A61-7B4E-E5E0CC4DFFE5}</Project>
+      <Project>{4760C3E5-4623-E6FC-A728-6B9BE8ABF704}</Project>
       <Name>PhotonUnityNetworking.Utilities.PhotonPlayer.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.AudioManager.Utils.Editor.csproj">
-      <Project>{8D5DBE1C-EB25-3140-9E4E-2E5CA69C5412}</Project>
+      <Project>{E8757E5A-0323-6134-A31F-2B7EAEC59423}</Project>
       <Name>Oculus.AudioManager.Utils.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PunDemos.DemoHubEditor.csproj">
-      <Project>{DEB6E5B1-0F60-C12F-7BCC-2E550F670B47}</Project>
+      <Project>{E9F4E640-7581-9FD4-1DAB-A0D96E3A66AF}</Project>
       <Name>PunDemos.DemoHubEditor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.csproj">
-      <Project>{A43FE11D-DBEA-223E-22CC-78C0B50FD294}</Project>
+      <Project>{302A75E3-4F50-F2DF-0188-847850CB4F81}</Project>
       <Name>Meta.WitAi</Name>
     </ProjectReference>
     <ProjectReference Include="Facebook.Wit.Dictation.Editor.csproj">
-      <Project>{94773ED7-761B-785F-4F4E-575691ED037D}</Project>
+      <Project>{6CAEFC39-6FDB-8A16-1BE9-26E6D1625D20}</Project>
       <Name>Facebook.Wit.Dictation.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.csproj">
-      <Project>{AADECD0D-F8F8-69F6-2727-A614E52944ED}</Project>
+      <Project>{D7763AF3-5B37-0E1D-2F4A-1EBCBB745AA5}</Project>
       <Name>PhotonUnityNetworking</Name>
     </ProjectReference>
     <ProjectReference Include="Facebook.Wit.Dictation.csproj">
-      <Project>{3B5C426D-E01B-BCB8-7AB9-FBF21AEBC289}</Project>
+      <Project>{694835BD-9235-C81A-ED8D-605DE32E6FEA}</Project>
       <Name>Facebook.Wit.Dictation</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.csproj">
-      <Project>{93636545-AB32-B39D-6E9E-DAC25371FE58}</Project>
+      <Project>{6B466F2B-72A0-4798-DFD4-67E4AE909038}</Project>
       <Name>Oculus.VR</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.AudioManager.Audio.Editor.csproj">
-      <Project>{233C943E-3B40-C7D5-CC6C-E4DFF8206D82}</Project>
+      <Project>{10C5B668-6E88-4685-B490-28DFB487DCFA}</Project>
       <Name>Oculus.AudioManager.Audio.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAI.Lib.Editor.csproj">
-      <Project>{696008F7-225D-066F-FADB-18EB074F217B}</Project>
+      <Project>{6B8B9C3D-068A-6484-E7F6-2BEC38DD08B8}</Project>
       <Name>Meta.WitAI.Lib.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Spatializer.Editor.csproj">
-      <Project>{67B69819-FB6B-870F-6ACD-3BE9DF89F647}</Project>
+      <Project>{00BAA019-C76B-0DE7-DE82-B007F63C3BEE}</Project>
       <Name>Oculus.Spatializer.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.Utilities.Editor.csproj">
-      <Project>{D1405357-FAD1-4B2A-639E-7EA2F3C12164}</Project>
+      <Project>{00DB0CE2-ADBE-0E64-FEF4-C0C3463CFC33}</Project>
       <Name>PhotonVoice.Utilities.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.TTS.csproj">
-      <Project>{E952553B-E846-AB1F-81E4-EB88515DA700}</Project>
+      <Project>{99DBA5DE-6D3C-5579-1E34-B89D4F0472D7}</Project>
       <Name>Meta.WitAi.TTS</Name>
     </ProjectReference>
     <ProjectReference Include="PunDemos.DemoSlotcarEditor.csproj">
-      <Project>{018B9D88-9FE5-E9DE-E648-063FF6E8976B}</Project>
+      <Project>{FF5CAE0B-BDBF-8EA0-1F39-5574B803F5B2}</Project>
       <Name>PunDemos.DemoSlotcarEditor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.PUN.csproj">
-      <Project>{5B4A7F72-7373-6A99-C99D-6FD2052B1F52}</Project>
+      <Project>{CF4476CA-44B6-FB15-339E-F05F67497787}</Project>
       <Name>PhotonVoice.PUN</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.TTS.Editor.csproj">
-      <Project>{6DF8A4D3-9CC6-F343-A530-2FE2B20786E2}</Project>
+      <Project>{2C323369-02B9-D9C0-665F-E2ABE9DBB78E}</Project>
       <Name>Meta.WitAi.TTS.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Platform.Editor.csproj">
-      <Project>{6BD55DA3-A017-4ABA-EDBB-249FF3B6658A}</Project>
+      <Project>{07BA777F-122A-1824-488C-4BE7D07F24B7}</Project>
       <Name>Oculus.Platform.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
-      <Project>{A3D77861-4362-E9F0-C150-9D5B2F5B01B4}</Project>
+      <Project>{13DFBAED-3DD7-02BD-25DD-376F7F87C916}</Project>
       <Name>PhotonUnityNetworking.Utilities.Culling.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.Editor.csproj">
-      <Project>{7F410C01-C972-0383-158C-E68A8880E0DA}</Project>
+      <Project>{55E2420A-4308-286B-9BE0-1AB4198227CC}</Project>
       <Name>Oculus.VR.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.OVR.Samples.csproj">
-      <Project>{46551074-E6FC-143D-05EF-DA98FA14CAEB}</Project>
+      <Project>{2C4CF6F1-4CB6-A4E1-8497-DB51D5DB720B}</Project>
       <Name>Oculus.Interaction.OVR.Samples</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.Samples.Editor.csproj">
-      <Project>{4C9B67E8-88E0-408E-D977-2BE069CA2583}</Project>
+      <Project>{381F5AE8-031E-1BBF-55B5-38F13FEDF7D0}</Project>
       <Name>Oculus.Interaction.Samples.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.Editor.csproj">
-      <Project>{97DEC961-53BA-AF2E-31FC-93DE0D831498}</Project>
+      <Project>{22A85282-500D-45B8-97F0-615E9EB7B2A5}</Project>
       <Name>Oculus.Interaction.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.VoiceSDK.Mic.Other.csproj">
-      <Project>{D916F1C1-2FD5-866D-9239-96394463249E}</Project>
+      <Project>{F7DC0107-A926-59D6-C833-72778A6756E6}</Project>
       <Name>Meta.VoiceSDK.Mic.Other</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
-      <Project>{46D221C6-7E64-E62C-C409-95D9CB0BF783}</Project>
+      <Project>{54EB40C8-6784-CF70-35D6-28A8347DF7DF}</Project>
       <Name>Oculus.VR.Scripts.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Spatializer.csproj">
-      <Project>{E54BF99A-6E85-6FC1-DD6B-D883D46182FB}</Project>
+      <Project>{D5D28311-0194-FED2-5375-21A123999842}</Project>
       <Name>Oculus.Spatializer</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.API.csproj">
-      <Project>{C69C9E83-A4CA-A637-7A59-597934E10029}</Project>
+      <Project>{2E49175F-C79F-D551-CF86-70135A5A4BCF}</Project>
       <Name>PhotonVoice.API</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonRealtime.csproj">
-      <Project>{A434E2AA-3A5F-A0A9-16E9-4C783A7F1FEF}</Project>
+      <Project>{8D0C4025-DFFF-A76F-63B0-18DCD4DF670E}</Project>
       <Name>PhotonRealtime</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.csproj">
-      <Project>{6A360945-15EB-0106-52B3-0A56927B1D62}</Project>
+      <Project>{1B757B11-2353-2E3B-9AA4-AA936F003D7F}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Conduit.Editor.csproj">
-      <Project>{369B68CC-C5CE-A699-6CC7-ED11087831D5}</Project>
+      <Project>{F3E489F9-3376-9620-3BE0-539515982F2F}</Project>
       <Name>Meta.WitAi.Conduit.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Platform.csproj">
-      <Project>{9CE45520-8C2E-AD32-9A43-065DE95000BE}</Project>
+      <Project>{605A3408-E569-36F5-AEE5-BB2E4D4830C0}</Project>
       <Name>Oculus.Platform</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.csproj">
-      <Project>{1D899424-F2EF-4053-458D-6B678989E921}</Project>
+      <Project>{29A4C2B5-092B-AB8A-F0C5-91A20423164E}</Project>
       <Name>PhotonVoice</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.InterfaceSupport.csproj">
-      <Project>{DE47E1D6-B6AA-6844-0EEE-2EEE1BB89CF4}</Project>
+      <Project>{B3819A19-3DB6-6D5E-DE02-8604C7F10C02}</Project>
       <Name>Oculus.Interaction.InterfaceSupport</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.Editor.csproj">
-      <Project>{3626F6C2-793E-EF83-C191-B7FD5A373D35}</Project>
+      <Project>{C35491DE-88C9-D861-FBE3-E095B8C8CF9E}</Project>
       <Name>PhotonVoice.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Editor.csproj">
-      <Project>{428D1878-5705-1174-11F8-E3175391D203}</Project>
+      <Project>{92617328-9609-3E34-A0A9-93A496E4D4FD}</Project>
       <Name>Meta.WitAi.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="VoiceSDK.Editor.csproj">
-      <Project>{BCFAF5F2-5350-561B-52E6-9D457F53C22A}</Project>
+      <Project>{97DE3099-EC24-DE71-B5E5-DCFD4F30123F}</Project>
       <Name>VoiceSDK.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="VoiceSDK.Dictation.Editor.csproj">
-      <Project>{3E45A784-3255-BA9E-0732-EE495DEE120C}</Project>
+      <Project>{D6E50FD0-0C5F-F556-E1E1-7D31CF4D0425}</Project>
       <Name>VoiceSDK.Dictation.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.OVR.Editor.csproj">
-      <Project>{B2378A7A-C974-3C45-F91E-7AEC768460E0}</Project>
+      <Project>{E7DC4676-F2DF-D18A-61DE-3BA3FC72AA91}</Project>
       <Name>Oculus.Interaction.OVR.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="VoiceSDK.Dictation.Runtime.csproj">
-      <Project>{F4B717B0-7E4F-34AD-C220-41B26B1DB4DF}</Project>
+      <Project>{9F6A8A8F-47AB-DDCA-BF59-28CC3D0930F3}</Project>
       <Name>VoiceSDK.Dictation.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.LipSync.Editor.csproj">
-      <Project>{3DB65200-A604-0578-65E1-62E8114CFB46}</Project>
+      <Project>{B295BAAD-D48D-19DD-4B62-AC5DF9E1B5A5}</Project>
       <Name>Oculus.LipSync.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
-      <Project>{511B0976-ED7B-1E1D-B90D-F0755D3F5F42}</Project>
+      <Project>{768D4942-5D1D-6F74-779F-9C7A3C552F13}</Project>
       <Name>PhotonUnityNetworking.Demos</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.TTS.Samples.csproj">
-      <Project>{4DE96B7B-B00B-A59D-64A5-109B2D18318A}</Project>
+      <Project>{61A797AC-7585-4AAF-A8F0-2B7E079BE005}</Project>
       <Name>Meta.WitAi.TTS.Samples</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.PUN.Editor.csproj">
-      <Project>{7C2B8C87-224C-5269-415C-ABC667E34671}</Project>
+      <Project>{86BF650C-8388-DAD1-B5E1-82DD2543973D}</Project>
       <Name>PhotonVoice.PUN.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.LipSync.csproj">
-      <Project>{9F268D59-5B52-9CA2-B29B-84C3983DCA33}</Project>
+      <Project>{9ADC3CA3-FFFE-290E-5068-F8C8832FEAD5}</Project>
       <Name>Oculus.LipSync</Name>
     </ProjectReference>
     <ProjectReference Include="VoiceSDK.Runtime.csproj">
-      <Project>{E666F3C6-EA77-2A58-3276-50794C783FA3}</Project>
+      <Project>{3E02B6F5-BABF-2757-299E-39B43C87ACCD}</Project>
       <Name>VoiceSDK.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Lib.csproj">
-      <Project>{3AC87EC3-3B48-2DA4-8D25-94B76D77137B}</Project>
+      <Project>{741C75EA-6539-8220-3C4D-DE279238E059}</Project>
       <Name>Meta.WitAi.Lib</Name>
     </ProjectReference>
   </ItemGroup>

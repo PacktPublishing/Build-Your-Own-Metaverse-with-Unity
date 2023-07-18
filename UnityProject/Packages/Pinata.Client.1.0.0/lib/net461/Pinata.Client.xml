@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pinata.Client</name>
+    </assembly>
+    <members>
+        <member name="P:Pinata.Client.Models.Json.ExtraJson">
+            <summary>
+            Extra data for/from the JSON serializer/deserializer to included with the object model.
+            </summary>
+        </member>
+        <member name="P:Pinata.Client.Models.UserPinnedDataTotalResponse.PinCount">
+            <summary>
+            The number of pins you currently have pinned with Pinata
+            </summary>
+        </member>
+        <member name="P:Pinata.Client.Models.UserPinnedDataTotalResponse.PinSizeTotal">
+            <summary>
+            The total size of all unique content you have pinned with Pinata (expressed in bytes).
+            </summary>
+        </member>
+        <member name="P:Pinata.Client.Models.UserPinnedDataTotalResponse.PinSizeWithReplicationsTotal">
+            <summary>
+            The total size of all content you have pinned with Pinata. This value is derived by multiplying the size of each piece of unique content by the number of times that content is replicated. This value will be expressed in bytes.
+            </summary>
+        </member>
+        <member name="M:Pinata.Client.PinataClient.EnableFiddlerDebugProxy(System.String)">
+            <summary>
+            Enable HTTP debugging via Fiddler. Ensure Tools > Fiddler Options... > Connections is enabled and has a port configured.
+            Then, call this method with the following URL format: http://localhost.:PORT where PORT is the port number Fiddler proxy
+            is listening on. (Be sure to include the period after the localhost).
+            </summary>
+            <param name="proxyUrl">The full proxy URL Fiddler proxy is listening on. IE: http://localhost.:8888 - The period after localhost is important to include.</param>
+        </member>
+        <member name="T:Pinata.Client.IDataEndpoint">
+            <summary>
+            The Data endpoint of Pinata Cloud.
+            </summary>
+        </member>
+        <member name="M:Pinata.Client.IDataEndpoint.TestAuthenticationAsync(System.Threading.CancellationToken)">
+            <summary>
+            Performs a connection test to the API with the configured credentials. Success message should read:
+            Congratulations! You are communicating with the Pinata API!
+            </summary>
+        </member>
+        <member name="M:Pinata.Client.IDataEndpoint.UserPinnedDataTotalAsync(System.Threading.CancellationToken)">
+            <summary>
+            This endpoint returns the total combined size for all content that you've pinned through Pinata
+            </summary>
+        </member>
+        <member name="M:Pinata.Client.IDataEndpoint.PinList(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            This endpoint returns data on what content the sender has pinned to IPFS through Pinata.
+            The purpose of this endpoint is to provide insight into what is being pinned, and how long it has been pinned.
+            The results of this call can be filtered using multiple query parameters.
+            </summary>
+        </member>
+        <member name="M:Pinata.Client.IPinningEndpoint.UnpinAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            This endpoint allows the sender to unpin content they previously uploaded to Pinata's IPFS nodes
+            </summary>
+        </member>
+        <member name="M:Pinata.Client.IPinningEndpoint.PinJsonToIpfsAsync(System.String,Pinata.Client.PinataMetadata,Pinata.Client.PinataOptions,System.Threading.CancellationToken)">
+            <summary>
+            This endpoint allows the sender to add and pin any JSON object they wish to Pinata's IPFS nodes. This endpoint is specifically optimized to only handle JSON content.
+            </summary>
+            <param name="jsonContent">Any valid JSON string</param>
+            <param name="pinataMetadata">Metadata associated with the JSON file</param>
+            <param name="pinataOptions">Custom replication policy for this file</param>
+            <returns></returns>
+        </member>
+        <member name="M:Pinata.Client.IPinningEndpoint.PinJsonToIpfsAsync(System.Object,Pinata.Client.PinataMetadata,Pinata.Client.PinataOptions,System.Threading.CancellationToken)">
+            <summary>
+            This endpoint allows the sender to add and pin any JSON object they wish to Pinata's IPFS nodes. This endpoint is specifically optimized to only handle JSON content.
+            </summary>
+            <param name="pinataContent">Any C# object that will be serialized to JSON</param>
+            <param name="pinataMetadata">Metadata associated with the JSON file</param>
+            <param name="pinataOptions">Custom replication policy for this file</param>
+            <returns></returns>
+        </member>
+        <member name="M:Pinata.Client.IPinningEndpoint.UserPinPolicyAsync(Pinata.Client.PinPolicy,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            This endpoint allows the sender to change the pin policy their account.
+            Following a successful call of this endpoint, the new pin policy provided will be utilized for every new piece of content pinned to IPFS via Pinata.
+            </summary>
+        </member>
+        <member name="M:Pinata.Client.IPinningEndpoint.PinFileToIpfsAsync(System.Action{Flurl.Http.Content.CapturedMultipartContent},Pinata.Client.PinataMetadata,Pinata.Client.PinataOptions,System.Threading.CancellationToken)">
+            <summary>
+            This endpoint allows the sender to add and pin any file, or directory, to Pinata's IPFS nodes.
+            </summary>
+        </member>
+        <member name="M:Pinata.Client.IPinningEndpoint.HashMetadataAsync(System.String,Pinata.Client.PinataMetadata,System.Threading.CancellationToken)">
+            <summary>
+            This endpoint allows the sender to change name and custom key values associated for a piece of content stored on Pinata.
+            Changes made via this endpoint only affect the metadata for the hash passed in.
+            </summary>
+        </member>
+        <member name="M:Pinata.Client.IPinningEndpoint.HashPinPolicyAsync(System.String,Pinata.Client.PinPolicy,System.Threading.CancellationToken)">
+            <summary>
+            This endpoint allows the sender to change the pin policy for an individual piece of content.
+            Changes made via this endpoint only affect the content for the hash passed in. They do not affect a user's account level pin policy.
+            </summary>
+        </member>
+        <member name="M:Pinata.Client.IPinningEndpoint.PinByHashAsync(System.String,Pinata.Client.PinataMetadata,Pinata.Client.PinataOptions,System.Threading.CancellationToken)">
+            <summary>
+            This endpoint allows you to add a hash to Pinata for asynchronous pinning. Content added through this endpoint is pinned in the background and will show up in your pinned items once the content has been found / pinned. In for this operation to succeed, the content for the hash you provide must already be pinned by another node on the IFPS network.
+            </summary>
+        </member>
+        <member name="M:Pinata.Client.IPinningEndpoint.PinJobs(System.Object,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves a list of all the pins that are currently in the pin queue for your user.
+            </summary>
+        </member>
+        <member name="P:Pinata.Client.PinataOptions.CidVersion">
+            <summary>
+            The CID Version IPFS will use when creating a hash for your content. Valid options are:
+            "0" - CIDv0, "1" - CIDv1
+            </summary>
+        </member>
+        <member name="P:Pinata.Client.PinataOptions.CustomPinPolicy">
+            <summary>
+            A custom pin policy for the piece of content being pinned.
+            </summary>
+        </member>
+        <member name="P:Pinata.Client.PinataOptions.WrapWithDirectory">
+            <summary>
+            Wrap your content inside of a directory when adding to IPFS. This allows users to retrieve content via a filename instead of just a hash.
+            </summary>
+        </member>
+    </members>
+</doc>

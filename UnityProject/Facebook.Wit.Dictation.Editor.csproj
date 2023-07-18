@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{94773ED7-761B-785F-4F4E-575691ED037D}</ProjectGuid>
+    <ProjectGuid>{6CAEFC39-6FDB-8A16-1BE9-26E6D1625D20}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Facebook.Wit.Dictation.Editor</AssemblyName>
@@ -344,11 +344,29 @@
     <Reference Include="Firebase.TaskExtension">
       <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
     </Reference>
+    <Reference Include="SDKConfiguration">
+      <HintPath>Assets\Plugins\Web3\Web3\SDKConfiguration.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="sdk_core_ethers">
+      <HintPath>Assets\Plugins\Web3\Web3\sdk_core_ethers.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="StarterAssetsPackageChecker">
       <HintPath>Assets\StarterAssets\Editor\PackageChecker\StarterAssetsPackageChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>Assets\Plugins\Web3\Web3\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Datadog.Logs">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.Datadog.Logs.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
@@ -358,6 +376,12 @@
     </Reference>
     <Reference Include="Google.VersionHandler">
       <HintPath>Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog">
+      <HintPath>Assets\Plugins\Analytics\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.App">
       <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
@@ -374,38 +398,14 @@
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
+    <Reference Include="GameData">
+      <HintPath>Assets\Plugins\Analytics\GameData.dll</HintPath>
+    </Reference>
     <Reference Include="Firebase.Platform">
       <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Auth">
       <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
-    </Reference>
-    <Reference Include="SDKConfiguration">
-      <HintPath>Assets\Plugins\Web3\Web3\SDKConfiguration.dll</HintPath>
-    </Reference>
-    <Reference Include="sdk_core_ethers">
-      <HintPath>Assets\Plugins\Web3\Web3\sdk_core_ethers.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.File">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.File.dll</HintPath>
-    </Reference>
-    <Reference Include="BouncyCastle.Crypto">
-      <HintPath>Assets\Plugins\Web3\Web3\BouncyCastle.Crypto.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.Datadog.Logs">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.Datadog.Logs.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.PeriodicBatching">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.PeriodicBatching.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog">
-      <HintPath>Assets\Plugins\Analytics\Serilog.dll</HintPath>
-    </Reference>
-    <Reference Include="GameData">
-      <HintPath>Assets\Plugins\Analytics\GameData.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -806,11 +806,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Facebook.Wit.Dictation.csproj">
-      <Project>{3B5C426D-E01B-BCB8-7AB9-FBF21AEBC289}</Project>
+      <Project>{694835BD-9235-C81A-ED8D-605DE32E6FEA}</Project>
       <Name>Facebook.Wit.Dictation</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Editor.csproj">
-      <Project>{428D1878-5705-1174-11F8-E3175391D203}</Project>
+      <Project>{92617328-9609-3E34-A0A9-93A496E4D4FD}</Project>
       <Name>Meta.WitAi.Editor</Name>
     </ProjectReference>
   </ItemGroup>

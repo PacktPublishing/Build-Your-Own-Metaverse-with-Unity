@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">455277341176</string>
+  <string name="google_storage_bucket" translatable="false">mymetaverse-c0326.appspot.com</string>
+  <string name="project_id" translatable="false">mymetaverse-c0326</string>
+  <string name="google_api_key" translatable="false">AIzaSyB-JI8XpOI6c3wjhWoK1VpZF4WjurfOKeY</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB-JI8XpOI6c3wjhWoK1VpZF4WjurfOKeY</string>
+  <string name="google_app_id" translatable="false">1:455277341176:android:b8025dcdd585152f48ce0d</string>
+  <string name="default_web_client_id" translatable="false">455277341176-5sm4t0vd2j9sgl8ini60tdin9qp9ktiq.apps.googleusercontent.com</string>
+</resources>

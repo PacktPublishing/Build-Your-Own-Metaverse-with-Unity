@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{428D1878-5705-1174-11F8-E3175391D203}</ProjectGuid>
+    <ProjectGuid>{92617328-9609-3E34-A0A9-93A496E4D4FD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Meta.WitAi.Editor</AssemblyName>
@@ -390,11 +390,29 @@
     <Reference Include="Firebase.TaskExtension">
       <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
     </Reference>
+    <Reference Include="SDKConfiguration">
+      <HintPath>Assets\Plugins\Web3\Web3\SDKConfiguration.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="sdk_core_ethers">
+      <HintPath>Assets\Plugins\Web3\Web3\sdk_core_ethers.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="StarterAssetsPackageChecker">
       <HintPath>Assets\StarterAssets\Editor\PackageChecker\StarterAssetsPackageChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>Assets\Plugins\Web3\Web3\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Datadog.Logs">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.Datadog.Logs.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
@@ -404,6 +422,12 @@
     </Reference>
     <Reference Include="Google.VersionHandler">
       <HintPath>Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog">
+      <HintPath>Assets\Plugins\Analytics\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.App">
       <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
@@ -420,38 +444,14 @@
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
+    <Reference Include="GameData">
+      <HintPath>Assets\Plugins\Analytics\GameData.dll</HintPath>
+    </Reference>
     <Reference Include="Firebase.Platform">
       <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Auth">
       <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
-    </Reference>
-    <Reference Include="SDKConfiguration">
-      <HintPath>Assets\Plugins\Web3\Web3\SDKConfiguration.dll</HintPath>
-    </Reference>
-    <Reference Include="sdk_core_ethers">
-      <HintPath>Assets\Plugins\Web3\Web3\sdk_core_ethers.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.File">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.File.dll</HintPath>
-    </Reference>
-    <Reference Include="BouncyCastle.Crypto">
-      <HintPath>Assets\Plugins\Web3\Web3\BouncyCastle.Crypto.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.Datadog.Logs">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.Datadog.Logs.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.PeriodicBatching">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.PeriodicBatching.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog">
-      <HintPath>Assets\Plugins\Analytics\Serilog.dll</HintPath>
-    </Reference>
-    <Reference Include="GameData">
-      <HintPath>Assets\Plugins\Analytics\GameData.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -852,27 +852,27 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Meta.WitAi.Lib.csproj">
-      <Project>{3AC87EC3-3B48-2DA4-8D25-94B76D77137B}</Project>
+      <Project>{741C75EA-6539-8220-3C4D-DE279238E059}</Project>
       <Name>Meta.WitAi.Lib</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.csproj">
-      <Project>{A43FE11D-DBEA-223E-22CC-78C0B50FD294}</Project>
+      <Project>{302A75E3-4F50-F2DF-0188-847850CB4F81}</Project>
       <Name>Meta.WitAi</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Conduit.csproj">
-      <Project>{2A72ECBA-A2E0-96E3-2541-E759615C497F}</Project>
+      <Project>{8DF9F8AD-2087-40C0-61D1-F684098B7460}</Project>
       <Name>Meta.WitAi.Conduit</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAi.Conduit.Editor.csproj">
-      <Project>{369B68CC-C5CE-A699-6CC7-ED11087831D5}</Project>
+      <Project>{F3E489F9-3376-9620-3BE0-539515982F2F}</Project>
       <Name>Meta.WitAi.Conduit.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.WitAI.Lib.Editor.csproj">
-      <Project>{696008F7-225D-066F-FADB-18EB074F217B}</Project>
+      <Project>{6B8B9C3D-068A-6484-E7F6-2BEC38DD08B8}</Project>
       <Name>Meta.WitAI.Lib.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Meta.VoiceSDK.Mic.Other.csproj">
-      <Project>{D916F1C1-2FD5-866D-9239-96394463249E}</Project>
+      <Project>{F7DC0107-A926-59D6-C833-72778A6756E6}</Project>
       <Name>Meta.VoiceSDK.Mic.Other</Name>
     </ProjectReference>
   </ItemGroup>

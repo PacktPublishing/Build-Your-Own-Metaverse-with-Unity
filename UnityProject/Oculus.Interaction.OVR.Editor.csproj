@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B2378A7A-C974-3C45-F91E-7AEC768460E0}</ProjectGuid>
+    <ProjectGuid>{E7DC4676-F2DF-D18A-61DE-3BA3FC72AA91}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Oculus.Interaction.OVR.Editor</AssemblyName>
@@ -345,11 +345,29 @@
     <Reference Include="Firebase.TaskExtension">
       <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
     </Reference>
+    <Reference Include="SDKConfiguration">
+      <HintPath>Assets\Plugins\Web3\Web3\SDKConfiguration.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="sdk_core_ethers">
+      <HintPath>Assets\Plugins\Web3\Web3\sdk_core_ethers.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="StarterAssetsPackageChecker">
       <HintPath>Assets\StarterAssets\Editor\PackageChecker\StarterAssetsPackageChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>Assets\Plugins\Web3\Web3\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Datadog.Logs">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.Datadog.Logs.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
@@ -359,6 +377,12 @@
     </Reference>
     <Reference Include="Google.VersionHandler">
       <HintPath>Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching">
+      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog">
+      <HintPath>Assets\Plugins\Analytics\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.App">
       <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
@@ -375,38 +399,14 @@
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
+    <Reference Include="GameData">
+      <HintPath>Assets\Plugins\Analytics\GameData.dll</HintPath>
+    </Reference>
     <Reference Include="Firebase.Platform">
       <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Auth">
       <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
-    </Reference>
-    <Reference Include="SDKConfiguration">
-      <HintPath>Assets\Plugins\Web3\Web3\SDKConfiguration.dll</HintPath>
-    </Reference>
-    <Reference Include="sdk_core_ethers">
-      <HintPath>Assets\Plugins\Web3\Web3\sdk_core_ethers.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.File">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.File.dll</HintPath>
-    </Reference>
-    <Reference Include="BouncyCastle.Crypto">
-      <HintPath>Assets\Plugins\Web3\Web3\BouncyCastle.Crypto.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.Datadog.Logs">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.Datadog.Logs.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.PeriodicBatching">
-      <HintPath>Assets\Plugins\Analytics\Serilog.Sinks.PeriodicBatching.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog">
-      <HintPath>Assets\Plugins\Analytics\Serilog.dll</HintPath>
-    </Reference>
-    <Reference Include="GameData">
-      <HintPath>Assets\Plugins\Analytics\GameData.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -807,19 +807,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Oculus.Interaction.csproj">
-      <Project>{9D1312C2-C23E-24E8-CE3F-ED258F43197D}</Project>
+      <Project>{742F3D75-7200-00C0-B54F-CDA08E01A50D}</Project>
       <Name>Oculus.Interaction</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.Editor.csproj">
-      <Project>{97DEC961-53BA-AF2E-31FC-93DE0D831498}</Project>
+      <Project>{22A85282-500D-45B8-97F0-615E9EB7B2A5}</Project>
       <Name>Oculus.Interaction.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.OVR.csproj">
-      <Project>{F2E70598-F07F-7CB7-1D83-3389A0283716}</Project>
+      <Project>{E149025D-B25B-27FE-6F60-7A46E9D2EB92}</Project>
       <Name>Oculus.Interaction.OVR</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.csproj">
-      <Project>{93636545-AB32-B39D-6E9E-DAC25371FE58}</Project>
+      <Project>{6B466F2B-72A0-4798-DFD4-67E4AE909038}</Project>
       <Name>Oculus.VR</Name>
     </ProjectReference>
   </ItemGroup>

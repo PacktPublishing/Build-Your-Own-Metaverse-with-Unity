@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "455277341176",
+    "project_id": "mymetaverse-c0326",
+    "storage_bucket": "mymetaverse-c0326.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455277341176:android:b8025dcdd585152f48ce0d",
+        "android_client_info": {
+          "package_name": "com.mymetaverse.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455277341176-5sm4t0vd2j9sgl8ini60tdin9qp9ktiq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-JI8XpOI6c3wjhWoK1VpZF4WjurfOKeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455277341176-5sm4t0vd2j9sgl8ini60tdin9qp9ktiq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "455277341176-3v197ep6nhlogqhe3k9hqgvdciv7djj3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mymetaverse.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455277341176:android:1c97ee0aab10d3e548ce0d",
+        "android_client_info": {
+          "package_name": "com.test.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455277341176-5sm4t0vd2j9sgl8ini60tdin9qp9ktiq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-JI8XpOI6c3wjhWoK1VpZF4WjurfOKeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455277341176-5sm4t0vd2j9sgl8ini60tdin9qp9ktiq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "455277341176-3v197ep6nhlogqhe3k9hqgvdciv7djj3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mymetaverse.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
