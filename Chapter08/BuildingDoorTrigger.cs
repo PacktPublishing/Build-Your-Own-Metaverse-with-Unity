@@ -98,7 +98,7 @@ public class BuildingDoorTrigger : MonoBehaviour, IPlayerActions
 
         docRef
             .GetSnapshotAsync()
-            .ContinueWith(task =>
+            .ContinueWithOnMainThread(task =>
             {
                 if (task.IsCanceled || task.IsFaulted)
                 {
@@ -165,7 +165,7 @@ public class BuildingDoorTrigger : MonoBehaviour, IPlayerActions
 
         docRef
             .UpdateAsync(updatedProperties)
-            .ContinueWith(task =>
+            .ContinueWithOnMainThread(task =>
             {
                 if (task.IsCanceled || task.IsFaulted)
                 {
