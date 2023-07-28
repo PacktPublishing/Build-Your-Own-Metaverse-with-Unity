@@ -111,7 +111,7 @@ public class BuildingDoorTrigger : MonoBehaviour, IPlayerActions
         //Create an instance to the Firestore Buildings Collection
         DocumentReference docRef = db.Collection("Buildings").Document(buildingInfo.buildingId);
 
-        docRef.GetSnapshotAsync().ContinueWith(task =>
+        docRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled)
             {
@@ -176,7 +176,7 @@ public class BuildingDoorTrigger : MonoBehaviour, IPlayerActions
         updatedProperties["OwnerUserId"] = auth?.CurrentUser.UserId;
 
 
-        docRef.UpdateAsync(updatedProperties).ContinueWith(task =>
+        docRef.UpdateAsync(updatedProperties).ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
             {
