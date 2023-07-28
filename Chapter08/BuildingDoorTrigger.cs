@@ -204,6 +204,7 @@ public class BuildingDoorTrigger : MonoBehaviour, IPlayerActions
 
     public async void LoginNft()
     {
+        Web3Wallet.url = "https://chainsafe.github.io/game-web3wallet/";
         // get current timestamp
 
         var timestamp = (int)
