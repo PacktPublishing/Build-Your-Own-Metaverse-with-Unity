@@ -226,6 +226,7 @@ public class BuildingDoorTrigger : MonoBehaviour, IPlayerActions
 
     public async void LoginNft()
     {
+        Web3Wallet.url = "https://chainsafe.github.io/game-web3wallet/";
         // get current timestamp
         var timestamp = (int)System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1)).TotalSeconds;
         // set expiration time
