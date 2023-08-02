@@ -241,8 +241,8 @@ public class BuildingDoorTrigger : MonoBehaviour, IPlayerActions
         // validate
         if (account.Length == 42 && expirationTime >= now)
         {
-            print("Account: " + account);
-            await UploadIPFS();
+            PlayerPrefs.SetString("Account", account);
+            MintNft();
         }
     }
 
