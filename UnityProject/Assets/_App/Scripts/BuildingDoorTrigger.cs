@@ -278,14 +278,7 @@ public class BuildingDoorTrigger : MonoBehaviour, IPlayerActions
 
     public async void MintNft()
     {
-        var voucherResponse721 = await EVM.Get721Voucher();
-        CreateRedeemVoucherModel.CreateVoucher721 voucher721 = new CreateRedeemVoucherModel.CreateVoucher721();
-        voucher721.tokenId = voucherResponse721.tokenId;
-        voucher721.minPrice = voucherResponse721.minPrice;
-        voucher721.signer = voucherResponse721.signer;
-        voucher721.receiver = voucherResponse721.receiver;
-        voucher721.signature = voucherResponse721.signature;
-
+        var account = PlayerPrefs.GetString("Account");
         // set chain: ethereum, moonbeam, polygon etc
         string chain = "ethereum";
         // chain id
@@ -295,12 +288,17 @@ public class BuildingDoorTrigger : MonoBehaviour, IPlayerActions
         // type
         string type = "721";
 
-        string voucherArgs = JsonUtility.ToJson(voucher721);
-        var nft = await UploadIPFS();
-        // connects to user's browser wallet to call a transaction
-        RedeemVoucherTxModel.Response voucherResponse = await EVM.CreateRedeemTransaction(chain, network, voucherArgs, type, nft, voucherResponse721.receiver);
-        string response = await Web3Wallet.SendTransaction(chainId, voucherResponse.tx.to, voucherResponse.tx.value.ToString(), voucherResponse.tx.data, voucherResponse.tx.gasLimit, voucherResponse.tx.gasPrice);
-        print("My NFT Address: " + response);
+        var response = await EVM.CreateApproveTransaction(chain, network, account, type);
+        Debug.Log("Response: " + response.connection.chain);
+
+        string responseNft = await Web3Wallet.SendTransaction(chainId, response.tx.to, "0",
+            response.tx.data, response.tx.gasLimit, response.tx.gasPrice);
+        if (responseNft == null)
+        {
+            Debug.Log("Empty Response Object:");
+        }
+
+        print("My NFT Address: " + responseNft);
     }
 
 }
