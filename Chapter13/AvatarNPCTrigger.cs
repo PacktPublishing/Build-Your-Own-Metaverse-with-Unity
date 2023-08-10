@@ -87,7 +87,7 @@ public class AvatarNPCTrigger : MonoBehaviour, IPlayerActions
     {
         //We check if the user has pressed the E key and is also inside the collider.
 
-        if (Input.GetKeyDown(KeyCode.E) && canInteract)
+        if (Input.GetKeyDown(KeyCode.E) || OVRInput.Get(OVRInput.RawButton.B) && canInteract)
         {
             avatarWindow.SetActive(true);
 
