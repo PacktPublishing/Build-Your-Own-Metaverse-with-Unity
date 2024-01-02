@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Firebase.Auth;
+using Firebase.Extensions;
 using Firebase.Firestore;
 using Models;
 using Nethereum.Signer;
